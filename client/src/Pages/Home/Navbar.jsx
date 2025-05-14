@@ -1,8 +1,27 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
+import { Link as RouterLink} from 'react-router-dom';
+//import { GrLanguage } from "react-icons/gr";
+import { CiLight } from "react-icons/ci";
+import { MdOutlineNightlight } from "react-icons/md";
+import { useLocation } from "react-router-dom";
+
 
 function Navbar() {
+
   const [navActive, setNavActive] = useState(false);
+  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light");
+  const [helpOpen, setHelpOpen] = useState(false);
+  // const [language, setLanguage] = useState("en");
+  // const [showLanguageOptions, setShowLanguageOptions] = useState(false);
+  const location = useLocation();
+  const hideNavbarRoutes = ["/login", "/signup","/about"];
+
+   useEffect(() => {
+    document.body.classList.remove("light", "dark");
+    document.body.classList.add(theme);
+    localStorage.setItem("theme", theme); // persist theme
+  }, [theme]);
 
   const toggleNav = () => {
     setNavActive(!navActive);
@@ -11,6 +30,17 @@ function Navbar() {
   const closeMenu = () => {
     setNavActive(false);
   };
+
+  const toggleTheme = () => {
+    setTheme(prev => (prev === "light" ? "dark" : "light"));
+  };
+
+  // const toggleLanguageOptions = () => setShowLanguageOptions(!showLanguageOptions);
+
+  // const changeLanguage = (lang) => {
+  //   setLanguage(lang);
+  //   setShowLanguageOptions(false);
+  // };
 
   useEffect(() => {
     const handleResize = () => {
@@ -26,14 +56,18 @@ function Navbar() {
     };
   }, []);
 
+  if (hideNavbarRoutes.includes(location.pathname)) {
+    return null; // Do not render navbar
+  }
+
   return (
     <nav className={`navbar ${navActive ? "active" : ""}`}>
       <div>
-        <img className="logo-image" src="./img/logo.png" alt="Logoipsum" />
+        <img className="logo-image" src={theme === "light" ? "./img/logo.png" : "./img/logo2.png"} alt="SalesWiz Logo" />
       </div>
       <a
-      role="button"
-      tabIndex="0"
+        role="button"
+        tabIndex="0"
         className={`nav__hamburger ${navActive ? "active" : ""}`}
         onClick={toggleNav}
       >
@@ -86,18 +120,13 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link
+            <RouterLink
+              to="about"
               onClick={closeMenu}
-              activeClass="navbar--active-content"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              to="About"
               className="navbar--content"
             >
               About
-            </Link>
+            </RouterLink>
           </li>
           <li>
             <Link
@@ -113,46 +142,58 @@ function Navbar() {
               Contact
             </Link>
           </li>
-          <li>
-            <Link
-              onClick={closeMenu}
-              activeClass="navbar--active-content"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              to="Help"
-              className="navbar--content"
-            >
-              Help
-            </Link>
+          <li className="help-dropdown">
+            <span onClick={() => setHelpOpen(!helpOpen)} className="navbar--content">Help ▾</span>
+            {helpOpen && (
+              <ul className="dropdown-menu">
+                <li><RouterLink to="/help/getting-started">Getting Started</RouterLink></li>
+                <li><RouterLink to="/help/ai-assistant">How to Use the AI Assistant</RouterLink></li>
+                <li><RouterLink to="/help/data-integration">Data Import & Integration</RouterLink></li>
+                <li><RouterLink to="/help/forecasting">Forecasting Explained</RouterLink></li>
+                <li><RouterLink to="/help/faqs">FAQs</RouterLink></li>
+                <li><RouterLink to="/contact">Contact Support</RouterLink></li>
+              </ul>
+            )}
           </li>
         </ul>
       </div>
-      <Link
+
+      <div className="iconsss">
+        {/* <div onClick={toggleLanguageOptions} className="icon-button">
+          <GrLanguage />
+          {showLanguageOptions && (
+            <div className="language-dropdown">
+              <div onClick={() => changeLanguage("en")}>English</div>
+              <div onClick={() => changeLanguage("ro")}>Română</div>
+            </div>
+          )}
+        </div> */}
+        {theme === "light" ? (
+          <div onClick={toggleTheme} className="icon-button">
+            <MdOutlineNightlight />
+          </div>
+        ) : (
+          <div onClick={toggleTheme} className="icon-button">
+            <CiLight />
+          </div>
+        )}
+      </div>
+
+
+      <RouterLink
+        to="/login"
         onClick={closeMenu}
-        activeClass="navbar--active-content"
-        spy={true}
-        smooth={true}
-        offset={-70}
-        duration={500}
-        to="Contact"
         className="login-btn"
       >
         Login
-      </Link>
-      <Link
+      </RouterLink>
+      <RouterLink
+        to="/signup"
         onClick={closeMenu}
-        activeClass="navbar--active-content"
-        spy={true}
-        smooth={true}
-        offset={-70}
-        duration={500}
-        to="Contact"
         className="started-btn"
       >
         Get Started
-      </Link>
+      </RouterLink>
     </nav>
   );
 }

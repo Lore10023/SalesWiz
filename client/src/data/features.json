@@ -1,0 +1,22 @@
+[
+  {
+    "image": "../img/UploadPage.png",
+    "title": "Upload & Integrate Sales Data",
+    "description": "Upload sales data from CSV or Excel. We clean and format it automatically."
+  },
+  {
+    "image": "../img/AnalyzeDataPage.png",
+    "title": "AI-Powered Data Analysis",
+    "description": "Understand performance trends, product strengths, and identify areas for improvement."
+  },
+  {
+    "image": "../img/ForecastDataPage.png",
+    "title": "Sales Forecasting Engine",
+    "description": "Get accurate sales predictions with machine learning. Make smart, timely decisions."
+  },
+  {
+    "image": "../img/ChatbotPage.png",
+    "title": "Conversational Insights (AI Chatbot)",
+    "description": "Ask Salee our sales assistent natural language questions and get answers."
+  }
+]

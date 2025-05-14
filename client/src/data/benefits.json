@@ -1,0 +1,18 @@
+[
+  {
+    "icon": "../img/clock.png",
+    "text": "Save Time with Automation"
+  },
+  {
+    "icon": "../img/accuracy.png",
+    "text": "Boost Accuracy with AI Forecasting"
+  },
+  {
+    "icon": "../img/decision.png",
+    "text": "Make Smarter Decisions Faster"
+  },
+  {
+    "icon": "../img/comment.png",
+    "text": "Ask Anything, Get Insights via Chatbot"
+  }
+]

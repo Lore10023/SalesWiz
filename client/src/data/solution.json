@@ -1,0 +1,18 @@
+[
+  {
+    "problem": "Manual data entry from various sources wastes time",
+    "solution": "Upload CSV/Excel or sync with CRM — we auto-clean and format your data"
+  },
+  {
+    "problem": "Teams can’t spot trends fast enough",
+    "solution": "AI analysis highlights strengths, weaknesses, and opportunities"
+  },
+  {
+    "problem": "Forecasting is slow, error-prone, or inconsistent",
+    "solution": "AI-driven forecasting gives quick, data-backed sales predictions"
+  },
+  {
+    "problem": "Sales insights buried in dashboards",
+    "solution": "Natural language chatbot delivers real-time answers and KPIs instantly"
+  }
+]

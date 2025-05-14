@@ -1,0 +1,482 @@
+body.light{
+  margin: 0 auto;
+  max-width: 1550px;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  background-color: #f4f6fc;
+}
+
+body{
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+  margin: 0 auto;
+  max-width: 1550px;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  background-color:  #00073b;
+  color: white;
+}
+
+body.dark .dashboard-charts{
+  background-color: #565656;
+}
+body.dark .dashboard-table{
+  background-color: #565656;
+}
+body.dark .metric-card{
+  background-color: #565656;
+}
+body.dark .chatbot-header{
+  color: white;
+}
+body.dark .chat-messages{
+  background-color:  #00073b;
+}
+body.dark .chat-input input{
+  background-color: #3b3b3b;
+  border-color: #3b3b3b;
+}
+body.dark .Upload--content--title{
+  color:white;
+}
+body.dark .upload-box{
+  background-color: #565656;
+}
+body.dark .desc{
+  color: white;
+}
+body.dark .Upload--content--preview{
+  background-color: #565656;
+}
+body.dark .h33{
+  color: white;
+}
+body.dark .Upload--file--box--input{
+  background-color:  #00073b;
+}
+body.dark .profile-avatar{
+  color: #00073b;
+}
+body.dark .profile-card{
+  background-color: #565656;
+}
+body.dark .des1{
+  color: white;
+}
+
+/*Navbar Style Start */
+.navigation--bar--container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #08172f;
+  color: white;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+}
+
+/*logo image*/
+.logo--image{
+  width: 160px;
+  height: 160px;
+}
+
+.image--container{
+  width: 100px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hamburger icon */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.icon--container{
+  margin-left: 30px;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* Close icon */
+.close-icon {
+  color: white;
+  cursor: pointer;
+}
+
+/* Nav links */
+.side--bar {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  gap: 10px;
+}
+/*Navbar Style Ends*/
+
+/*Sidebar Style Start*/
+.side--bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: #08172f;
+  color: white;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.side--bar.open {
+  transform: translateX(0);
+}
+
+.side--bar--links.profile{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.side--bar--links {
+  padding-top: 55px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.side--bar--links:hover{
+  text-decoration: underline;
+}
+
+.links{
+  text-decoration: none;
+  color: white;
+}
+
+.side--bar--links:hover {
+  color: #00bfff;
+}
+
+.profile--logo{
+  height: 70px;
+  width: 70px;
+}
+/*Sidebar Style Ends*/
+
+/*Upload Style Start*/
+.h33{
+  color: black;
+}
+
+.desc{
+  color: black;
+}
+
+.Upload--content--box {
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 800px;
+}
+
+.Upload--content--title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+
+.upload-box {
+  background-color: white;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.upload-box p {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: black;
+}
+
+.Upload--file--box--input {
+  background-color: #3897b8;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.Upload--content--btn {
+  background-color: #5e46b5;
+  color: rgb(255, 255, 255);
+  padding: 12px 100px;
+  border: 1px solid #4368aa;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.Upload--content--btn:hover {
+  background-color: rgb(255, 255, 255, 0.8);
+  color: #5e46b5;
+}
+
+.Upload--content--preview {
+  background-color: white;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: black;
+}
+/*Upload Style Ends*/
+
+/*Analyze Data Style Start*/
+
+.dashboard {
+  padding: 2rem;
+  margin-top: 100px;
+  min-height: 100vh;
+  font-family: Roboto, sans-serif;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+
+.dashboard-charts,
+.dashboard-table {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.chart-placeholder,
+.table-placeholder {
+  height: 250px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+/*Analyze Data Style Ends*/
+
+/*Forecast Sales Style Start*/
+.forecast-dashboard {
+  padding: 2rem;
+  min-height: 100vh;
+  margin-top: 100px;
+}
+
+.metric-card {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  font-weight: 600;
+}
+
+.chart-placeholder,
+.table-placeholder {
+  background: #e0e0e0;
+  height: 250px;
+  margin-top: 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+}
+/*Forecast Sales Style Ends*/
+
+/*Chatbot Style Start*/
+.chatbot-page {
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  font-family: 'Segoe UI', sans-serif;
+  margin-top: 100px;
+}
+
+.chatbot-header {
+  color: black;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.chatbot-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.message-bubble {
+  max-width: 70%;
+  padding: 0.7rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 15px;
+  font-size: 0.95rem;
+}
+
+.user {
+  background-color: #cbd5e1;
+  align-self: flex-end;
+}
+
+.bot {
+  background-color: #38bdf8;
+  color: white;
+  align-self: flex-start;
+}
+
+.chat-input {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.chat-input input {
+  flex-grow: 1;
+  padding: 0.8rem;
+  border-radius: 20px;
+  border: 1px solid #94a3b8;
+  outline: none;
+}
+
+.chat-input button {
+  margin-left: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  background-color: #0ea5e9;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/*Chatbot Style Ends*/
+
+/*Profile Style Start*/
+.profile-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.profile-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 300px;
+}
+
+.profile-avatar {
+  background-color: #e2e8f0;
+  border-radius: 50%;
+  padding: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.profile-name {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.profile-role {
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.profile-info {
+  text-align: left;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+.edit-btn {
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+}
+
+.edit-btn:hover {
+  background-color: #0284c7;
+}
+
+/*Profile Style Ends*/
