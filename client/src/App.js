@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Home from "./Pages/Home/Homescreen";
@@ -16,8 +16,14 @@ import UserDashboardLayout from "./Pages/UserDashboardLayout";
 import PublicLayout from "./Pages/PublicLayout";
 
 import About from "./Pages/Home/About";
+import { initHotjar } from "./utils/hotjar";
 
 function App() {
+
+  useEffect(()=>{
+    initHotjar();
+  },[]);
+
   return (
     <div>
        <Router>
